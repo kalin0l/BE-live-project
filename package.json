@@ -1,0 +1,28 @@
+{
+  "name": "be-live-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "kalin",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19",
+    "npm": "^8.14.0",
+    "validator": "^13.7.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
