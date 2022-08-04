@@ -2,11 +2,11 @@ const jwt = require("jsonwebtoken");
 
 const createJWT = ({ payload }) => {
   // console.log(payload);
-  const token = jwt.sign(payload, "jwtSecret");
+  const token = jwt.sign(payload, process.env.JWT_SECRET);
   return token;
 };
 
-const isTokenValid = (token) => jwt.verify(token, "jwtSecret");
+const isTokenValid = (token) => jwt.verify(token, process.env.JWT_SECRET);
 
 const attachCookies = ({ res, user,refreshToken }) => {
   const accessTokenJWT = createJWT({ payload: {user} });
