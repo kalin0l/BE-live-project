@@ -1,11 +1,11 @@
-const User = require('../models/User')
-const Deposit = require('../models/Deposit')
-const HttpError = require('../errors/error')
-
+const Deposit = require("../models/Deposit");
+const User = require("../models/User");
+const { getAll } = require("./handleFactory");
 
 const createDeposit = async(req,res,next) => {
     const {deposit} = req.body
     const {id} = req.params
+    console.log(Deposit);
     if(!deposit){
         return next(new HttpError('Please provide an amount for the deposit',404))
     }
@@ -19,13 +19,9 @@ const createDeposit = async(req,res,next) => {
 
     res.status(201).json({newDeposit});
 }
-const getAllDeposits = async(req,res,next) => {
-    const {id} = req.params
-    const deposits = await Deposit.find({user:id});
-    res.status(200).json({deposits,length:deposits.length});
-}
-
+const getAllDeposits = getAll(Deposit);
 
 module.exports = {
-    createDeposit,getAllDeposits
-}
+  createDeposit,
+  getAllDeposits,
+};
