@@ -1,11 +1,11 @@
 const Deposit = require("../models/Deposit");
 const User = require("../models/User");
+const HttpError = require("../errors/error");
 const { getAll } = require("./handleFactory");
 
 const createDeposit = async(req,res,next) => {
     const {deposit} = req.body
     const {id} = req.params
-    console.log(Deposit);
     if(!deposit){
         return next(new HttpError('Please provide an amount for the deposit',404))
     }

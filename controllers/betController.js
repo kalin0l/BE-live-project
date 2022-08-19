@@ -1,5 +1,6 @@
 const Bet = require("../models/Bets");
 const User = require("../models/User");
+const HttpError = require("../errors/error");
 const { getAll, deleteOne } = require("./handleFactory");
 
 const createBet = async(req,res,next) => {
