@@ -26,9 +26,9 @@ app.use('/api/v1/auth',authRouter);
 app.use('/',betRouter);
 app.use('/api/v1',depositRouter);
 
-app.use((req,res,next) => {
-    res.sendFile(__dirname,'public','index.html')
-})
+// app.use((req,res,next) => {
+//     res.sendFile(__dirname,'public','index.html')
+// })
 
 
 app.use(globalErr);
