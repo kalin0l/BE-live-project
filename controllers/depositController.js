@@ -14,14 +14,17 @@ const createDeposit = async(req,res,next) => {
     if(!user){
         return next(new HttpError('User is not found',404))
     }
-
+    
     const newDeposit = await Deposit.create({deposit,user:id});
 
     res.status(201).json({newDeposit});
 }
 const getAllDeposits = getAll(Deposit);
 
+
+
 module.exports = {
   createDeposit,
   getAllDeposits,
+  
 };
