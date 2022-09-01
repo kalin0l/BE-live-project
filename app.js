@@ -8,7 +8,6 @@ const globalErr = require('./controllers/errorController');
 const path = require('path');
 
 
-
 const app = express();
 app.use(morgan('tiny'));
 app.use(express.json());
@@ -16,6 +15,7 @@ app.use(cookieParser(process.env.JWT_SECRET));
 app.use(cors());
 
 
+app.use(express.static(path.join('public')));
 
 
 const authRouter = require('./routes/authRoutes');
