@@ -27,7 +27,7 @@ app.use('/',betRouter);
 app.use('/api/v1',depositRouter);
 
 app.use((req,res,next) => {
-    res.sendFile(__dirname,'public','index.html')
+    res.sendFile(path.resolve(__dirname,'public','index.html'))
 })
 
 
