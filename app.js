@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const morgan = require('morgan');
-const globalErr = require('./controllers/errorController')
+const globalErr = require('./controllers/errorController');
+const path = require('path');
 
 
 
